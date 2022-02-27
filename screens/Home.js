@@ -5,6 +5,8 @@ import HeaderTabs from '../components/HeaderTabs';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
 import RestaurantItems, { localRestaurants } from '../components/RestaurantItems';
+import { Divider } from 'react-native-elements/dist/divider/Divider';
+import BottomTabs from '../components/BottomTabs';
 
 
 const YELP_API_KEY = "Tq_QYeUvgXhbDiBQru5ja5AfBndqf0NnFOrTek5h1YvBHEFhW8fUOOj-Yt9SRUArXS3wCtkNI8wGbS_wenkUcF8C-FYaA6rVHPaPFHCF-cqmDO1K6xe1ou_7Xr4bYnYx"
@@ -28,6 +30,7 @@ export default function Home() {
     return fetch(yelpUrl, apiOptions)
     .then((res) => res.json())  
     .then(json => setRestaurantData(json.businesses.filter((business) => business.transactions.includes(activeTab.toLowerCase()))));
+    //.then(json => setRestaurantData(json.businesses))
   };
 
   // getting the details from the api and rendering them on the screen
@@ -45,6 +48,8 @@ export default function Home() {
         <Categories />
         <RestaurantItems restaurantData= {restaurantData}  />  
       </ScrollView>
+      <Divider width={1} />
+      <BottomTabs />
     </SafeAreaView>
   )
 }
