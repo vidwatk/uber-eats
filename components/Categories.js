@@ -28,7 +28,7 @@ const items = [
     },
     {
         image: require("../assets/images/desserts.png"),
-        text: "Cakes"
+        text: "cakes"
     }
 ];
 
@@ -39,7 +39,7 @@ export default function Categories() {
           marginTop: 5,
           backgroundColor: "#fff",
           paddingVertical: 10,
-          paddingLeft: 20,
+          paddingLeft: 15,
         }}
       >
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
