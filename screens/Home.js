@@ -3,6 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import HeaderTabs from '../components/HeaderTabs'
 import SearchBar from '../components/SearchBar'
+import Categories from '../components/Categories'
 
 export default function Home() {
   return (
