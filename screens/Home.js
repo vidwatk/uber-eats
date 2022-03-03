@@ -11,7 +11,7 @@ import BottomTabs from '../components/home/BottomTabs';
 
 const YELP_API_KEY = "Tq_QYeUvgXhbDiBQru5ja5AfBndqf0NnFOrTek5h1YvBHEFhW8fUOOj-Yt9SRUArXS3wCtkNI8wGbS_wenkUcF8C-FYaA6rVHPaPFHCF-cqmDO1K6xe1ou_7Xr4bYnYx"
 
-export default function Home() {
+export default function Home({navigation}) {
   const [restaurantData, setRestaurantData] = React.useState(localRestaurants)
   const [city, setCity] = useState("New York")
   const [activeTab, setActiveTab] = useState("Delivery")
@@ -33,7 +33,7 @@ export default function Home() {
     //.then(json => setRestaurantData(json.businesses))
   };
 
-  // getting the details from the api and rendering them on the screen
+  // getting the details from the api and rendering them on the
   useEffect(() => {
     getRestaurantsFromYelp();
   }, [city, activeTab])
@@ -46,7 +46,7 @@ export default function Home() {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
         <Categories />
-        <RestaurantItems restaurantData= {restaurantData}  />  
+        <RestaurantItems restaurantData= {restaurantData} navigation = {navigation}  />  
       </ScrollView>
       <Divider width={1} />
       <BottomTabs />
